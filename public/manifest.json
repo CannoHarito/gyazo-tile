@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#efedea",
   "icons": [
-    { "src": "/maskable.svg", "purpose": "maskable" },
+    { "src": "/maskable.svg", "sizes": "any", "purpose": "maskable" },
     { "src": "/favicon.ico", "sizes": "any", "type": "image/svg+xml" }
   ],
   "scope": "/",
