@@ -1,0 +1,22 @@
+{
+  "imports": {
+    "@brc-dd/iron": "jsr:@brc-dd/iron@^2.0.0",
+    "@cmd-johnson/oauth2-client": "jsr:@cmd-johnson/oauth2-client@^2.0.0",
+    "hono": "jsr:@hono/hono@^4.12.10"
+  },
+  "tasks": {
+    "build-app": "deno bundle --outdir static $DENO_ARGS browser/app.ts",
+    "build-sw": "deno bundle --outdir static $DENO_ARGS browser/sw.ts",
+    "serve": "deno serve --env -EN -R=public,static $DENO_ARGS main.tsx",
+    "dev-build": "export DENO_ARGS=--watch && deno run build-*",
+    "dev-serve": "export DENO_ARGS=--watch && deno run serve",
+    "dev": { "dependencies": ["dev-build", "dev-serve"] },
+    "clean": "rm -rf static/",
+    "check": "deno fmt --check && deno lint"
+  },
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "hono/jsx"
+  },
+  "exclude": ["./public/*.svg", "./dist"]
+}

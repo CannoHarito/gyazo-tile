@@ -1,0 +1,42 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@brc-dd/iron@2": "2.0.0",
+    "jsr:@cmd-johnson/oauth2-client@2": "2.0.0",
+    "jsr:@hono/hono@^4.12.10": "4.12.18",
+    "jsr:@std/encoding@^1.0.5": "1.0.10",
+    "npm:uint8array-extras@^1.5.0": "1.5.0"
+  },
+  "jsr": {
+    "@brc-dd/iron@2.0.0": {
+      "integrity": "6ca3c59d20da4932d67f13e4190c63047f83b9656824df8c8abd5d6e4dc3f322",
+      "dependencies": [
+        "npm:uint8array-extras"
+      ]
+    },
+    "@cmd-johnson/oauth2-client@2.0.0": {
+      "integrity": "e2f2fa6e657db2a39a55f7d19a9e331c317f3ddbb6068aa44947aa247a99125e",
+      "dependencies": [
+        "jsr:@std/encoding"
+      ]
+    },
+    "@hono/hono@4.12.18": {
+      "integrity": "854fd0628abd7703a1583807f1ae8f99399604b9452b6a2a777fd3e097977b8c"
+    },
+    "@std/encoding@1.0.10": {
+      "integrity": "8783c6384a2d13abd5e9e87a7ae0520a30e9f56aeeaa3bdf910a3eaaf5c811a1"
+    }
+  },
+  "npm": {
+    "uint8array-extras@1.5.0": {
+      "integrity": "sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@brc-dd/iron@2",
+      "jsr:@cmd-johnson/oauth2-client@2",
+      "jsr:@hono/hono@^4.12.10"
+    ]
+  }
+}
