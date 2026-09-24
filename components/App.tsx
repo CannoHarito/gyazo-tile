@@ -104,7 +104,7 @@ const App = () => (
         <option value="jpeg">jpeg</option>
       </select>
       <button type="submit" name="download" class="secondary">保存</button>
-      <button type="submit" name="upload">Gyazoにアップロード</button>
+      <button type="submit" name="upload" disabled>Gyazoにアップロード</button>
     </form>
   </>
 );

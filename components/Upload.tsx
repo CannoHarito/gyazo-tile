@@ -26,5 +26,7 @@ globalThis.addEventListener("upload", async (e) => {
     }
   }
 });
+const $buttonUpload = document.querySelector("button[name=upload]");
+if ($buttonUpload) $buttonUpload.disabled = false;
 `;
 export default Upload;

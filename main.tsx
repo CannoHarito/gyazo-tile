@@ -137,15 +137,28 @@ app.get("/", async (c) => {
       </Layout>,
     );
   }
+  if ("true" === c.req.query("nologin")) {
+    return c.html(
+      <Layout>
+        <App />
+        <script type="module" src="./app.js"></script>
+      </Layout>,
+    );
+  }
   return c.html(
     <Layout>
       <p>
         複数の画像をタイル状に並べて、<br />
         1枚の画像としてGyazoにアップロード!
       </p>
-      <a href="/login" role="button">
-        Gyazoアクセストークンを取得
-      </a>
+      <div class="grid">
+        <a href="/login" role="button">
+          Gyazoアクセストークンを取得
+        </a>
+        <a href="?nologin=true" role="button" class="secondary">
+          nologin mode
+        </a>
+      </div>
     </Layout>,
   );
 });

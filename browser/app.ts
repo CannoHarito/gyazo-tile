@@ -107,7 +107,7 @@ const getFormJoin = () => ({
   sizeH: validSizeInt($formSize.sizeH.value, defalutFormJoin.sizeH),
 } as FromJoin);
 
-let configTimer: number;
+let configTimer: ReturnType<typeof setTimeout>;
 const saveForm = () => {
   clearTimeout(configTimer);
   configTimer = setTimeout(
