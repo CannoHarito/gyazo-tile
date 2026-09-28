@@ -49,7 +49,7 @@ app.get("/login", async (c) => {
 app.get("/callback", async (c) => {
   const codeVerifier = getCookie(c, oauthCookieName);
   if (!codeVerifier) return c.json({ error: "No codeVerifier found." }, 401);
-  const client = getOauth2Client(new URL("/auth", c.req.url).href);
+  const client = getOauth2Client(new URL("/callback", c.req.url).href);
   const { accessToken } = await client.code.getToken(c.req.url, {
     codeVerifier,
   });
