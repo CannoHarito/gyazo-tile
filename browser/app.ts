@@ -294,8 +294,9 @@ const readStoredFiles = async () => {
     const store = transaction.objectStore("inbox");
     const getRequest = store.getAll();
     getRequest.onsuccess = () => {
-      const files = getRequest.result.map(({ file }) => file)
-        .filter((f): f is File => f && f instanceof File);
+      const files = getRequest.result.map(({ file, name }) =>
+        (file && file instanceof Blob) ? new File([file], name || "blob") : null
+      ).filter((f) => !!f);
       getImageBitmaps(files).then((images) => handleImageBitmap(images));
     };
     transaction.oncomplete = () => {
